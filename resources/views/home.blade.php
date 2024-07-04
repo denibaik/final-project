@@ -59,7 +59,7 @@
                     href="@if (Auth::user()->role !== 'Admin') javascript:void(0)@else{{ route('admin') }} @endif">{{ Auth::user()->name }}</a>
                 <a href="{{ route('logout') }}" style="margin-left: 16px;"><i data-feather="log-out"></i></a>
             @else
-                <a href="#"><i data-feather="log-in"></i></a>
+                <a href="{{ route('login') }}"><i data-feather="log-in"></i></a>
             @endif
             {{-- <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart"></i>
                 <span class="quantity-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span>
