@@ -282,6 +282,7 @@
                     <label for="">Detail Pengiriman : </label>
                     <form action="{{ route('beli') }}" method="post">
                         @csrf
+                        @if (Auth::check())
                         <input type="hidden" name="product_id" value="" id="modal-id">
                         <label for="">Nama : </label>
                         <input type="text" name="" id="" readonly
@@ -295,6 +296,7 @@
                         <input type="text" name="" id=""
                             value="{{ Auth::user()->alamat ?? 'kosong' }}" readonly>
                         <br><br>
+                        @endif
                         @if (Auth::check())
                             @if (Auth::user()->role == 'Admin')
                                 <button type="button" disabled
